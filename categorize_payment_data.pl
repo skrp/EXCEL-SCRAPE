@@ -1,6 +1,5 @@
-# Crawl over a Spreadsheet
-# To extract payment data
-# Categorize data & produce custom data
+# Crawl over a Spreadsheet from a database dump
+# Categorize data & produce custom reports
 use strict; use warnings;
 use Spreadsheet::ParseExcel;
 use constant { ICOL => 0, PCOL => 6, }; # Dependent on target file
