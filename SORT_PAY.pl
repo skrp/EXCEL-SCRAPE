@@ -1,7 +1,8 @@
-# Crawl over a Spreadsheet from a database dump
-# Categorize data & produce custom reports
 use strict; use warnings;
 use Spreadsheet::ParseExcel;
+#######################################
+# SORT_PAY - categorize payment sources
+# SETUP ###############################
 use constant { ICOL => 0, PCOL => 6, }; # Dependent on target file
 my ($l, $book) = @ARGV;
 open(my $log, '>>', $l) or die "ARG1 ERROR NEED LOGFILE";
