@@ -16,6 +16,7 @@ open(my $bfh, '<', $book) or die ("FAIL OPEN $book\n");
 my $parser = Spreadsheet::ParseXLSX->new;
 my $wb = $parser->parse($book);
 die ("parser error") unless defined $wb;
+# SHEETS ###################################
 my @sheets;
 foreach ($wb->worksheets())
     { push @sheets, $_->get_name(); }
@@ -24,6 +25,7 @@ foreach (@sheets)
     { last if $_ eq $start; $s++; }
 foreach (@sheets)
     { last if $_ eq $end; $e++; }
+# GET DATA ##################################
 while ($s <= $e) {
     my $ws = $wb->worksheet($s);
     my $cell1 = $ws->get_cell($row1, $col1);
@@ -31,6 +33,7 @@ while ($s <= $e) {
     $s++;
     my $sheet = $ws->get_name;
     my $value1 = $cell1->value;
+# CELL 2 OPTIONAL ###########################
     my $value2 = $cell2->value if defined $cell2;
     print "$sheet : $value1";
     if (defined $value2)
