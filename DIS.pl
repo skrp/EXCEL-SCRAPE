@@ -2,7 +2,10 @@ use strict; use warnings;
 use Spreadsheet::ParseXLSX;
 #########################################
 # DIS - print values of spreadsheet range
+### DIS.pl start_sheet end_sheet row_1 col_1 (of cell, additional cell optional)
 ### DIS.pl sheet1 sheet2 row_1 col_1 row_2 col_2
+# row/cell start at 0
+# in Excel set A1 = 0; then in B2 set =A1+1; (this will help)
 # SETUP #####################################
 my ($book, $start, $end, $row1, $col1, $row2, $col2) = @ARGV;
 die ("no book arg; book start end cell1 cell2 cell3") unless defined $book;
