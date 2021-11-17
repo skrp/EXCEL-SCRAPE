@@ -1,3 +1,6 @@
 # EXCEL-SCRAPE
 Spreadsheet Data Scrapes
-Scraping can rarely be reused
+
+Scraping can rarely be reused, this is a proof of my custom methods.
+The example is an actual case of extracting data from Tsys payment systems data dumps. 
+This is necessary to help reconcile transactions to the internal company system.
